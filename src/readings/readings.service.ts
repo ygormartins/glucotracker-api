@@ -31,6 +31,6 @@ export class ReadingsService {
   }
 
   async deleteReading(readingId: string): Promise<any> {
-    return await this.readingModel.restore({ _id: readingId });
+    return await this.readingModel.delete({ _id: readingId });
   }
 }
