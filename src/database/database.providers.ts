@@ -24,7 +24,10 @@ export const DatabaseProviders = [
       return {
         uri: `mongodb://${uri}`,
         connectionFactory: (connection) => {
-          connection.plugin(MongooseDelete, { deletedAt: true });
+          connection.plugin(MongooseDelete, {
+            deletedAt: true,
+            overrideMethods: true,
+          });
           return connection;
         },
       };
