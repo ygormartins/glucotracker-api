@@ -17,7 +17,7 @@ export class UsersController {
 
   @Get()
   async findAll() {
-    return await this.usersService.getUsers();
+    return await this.usersService.getAllUsers();
   }
 
   @Post()

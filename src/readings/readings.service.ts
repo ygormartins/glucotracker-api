@@ -12,7 +12,7 @@ export class ReadingsService {
     private readingModel: DatabaseModel<ReadingDocument>,
   ) {}
 
-  async getReadings(): Promise<Reading[]> {
+  async getReadings(): Promise<ReadingDocument[]> {
     return await this.readingModel.find();
   }
 

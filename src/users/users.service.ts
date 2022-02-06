@@ -12,8 +12,12 @@ export class UsersService {
     private userModel: DatabaseModel<UserDocument>,
   ) {}
 
-  async getUsers(): Promise<User[]> {
+  async getAllUsers(): Promise<UserDocument[]> {
     return await this.userModel.find();
+  }
+
+  async getUser(filter: any): Promise<UserDocument> {
+    return await this.userModel.findOne(filter);
   }
 
   async createUser(createUserDto: CreateUserDto): Promise<User> {
